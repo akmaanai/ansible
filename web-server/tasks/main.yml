@@ -1,7 +1,9 @@
 ---
 # tasks file for web-server
 - name: make sure nginx is installed
-  apt: "name={{ item }} state=present"
+  hosts: all
+  become: yes
+  yum: "name={{ item }} state=present"
   with_items:
     - nginx
 
