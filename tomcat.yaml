@@ -1,0 +1,11 @@
+---
+- name: Play app
+  hosts: all
+  become: yes
+
+  tasks:
+      - name: Create a username for tomcat
+        user:
+          name: tomcatadm
+          group: users
+          shell: /bin/bash
