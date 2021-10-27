@@ -3,9 +3,9 @@
 - name: make sure nginx is installed
   hosts: all
   become: yes
-  yum: "name={{ item }} state=present"
-  with_items:
-    - nginx
+  yum:
+    name=nginx
+    state=latest:
 
 - name: make sure nginx is running
   service: "name=nginx state=running"
